@@ -1,0 +1,25 @@
+Do all of these using Pandas:
+
+1- open sample.csv using Pandas into a DataFrame (name it df).
+2- print a list of the column headers.
+3- export df into another file, this time make tab-delimited.
+4- print the "OCCUPATION" column of df.
+5- print rows 10-20 of df.
+6- extract a sub-dataframe from df consisting of those columns whose headers start with "TRANSACTION".
+7- print the rows of df where CITY is equal to "BIRMINGHAM"
+8- count the number of rows of df where CITY is equal to "BIRMINGHAM".
+9- print the "OCCUPATION" values for all rows where CITY is equal to "BIRMINGHAM"
+10- print all distinct values of CITY in df.
+11- print all rows of df, sorted by "TRANSACTION_DT"
+12- count the number of rows of df where CITY is "BIRMINGHAM" and TRANSACTION_AMT is greater than 500
+13- find all distinct STATE values in df.
+14- add a new column to df, called FULL_NAME containing FIRST_NAME + " " + LAST_NAME
+15- add a new BOOLEAN column called RICH with values True if TRANSACTION_AMT > 5000 and False otherwise.
+16- loop through all rows, and one by one, print the value of TRANSACTION_DT of the row.
+17- do the same thing, split the values of TRANSACTION_DT (e.g. "2005-02-25" by the dash "-" and print the resulting list. e.g., you should print the list ["2005", "02", "25"]
+18- add a new column to df called YEAR that contains the year portion of TRANSACTION_DT
+
+
+Bonus: 
+19- for each distinct value of CITY, count the number of rows with that CITY value. (hint: use the .group_by() function of Pandas).
+20- create a new dataframe with two columns: CITY and COUNT. CITY should contain all the distinct values of CITY in df, and count should be the number of rows with that value of CITY. Sort  this DataFrame by COUNT in descending order and export it to a tab-delimited file "counts.csv".

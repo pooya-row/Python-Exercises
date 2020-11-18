@@ -8,6 +8,8 @@ pd.set_option('display.max_columns', None)
 with open('data.csv', 'r') as f:
     df = pd.read_csv(f, delimiter='|')
 
+
+# print(df.iloc[2])
 # 2
 # print(df.info())
 # print(df.columns)
@@ -17,7 +19,7 @@ with open('data.csv', 'r') as f:
 #     df.to_csv(f, sep='\t', index=False, line_terminator='\n')
 
 # 4
-# print(df['OCCUPATION'])
+print(df['OCCUPATION'])
 
 # 5
 # print(df.iloc[10:21])
@@ -28,7 +30,7 @@ with open('data.csv', 'r') as f:
 # for col in df.columns:
 #     if (re.findall(r'\w*TRANSACTION\w*', col)) != []:
 #         trans_col.append(col)
-## better solution:
+# better solution:
 # col = [col for col in df.columns if col.startswith('TRANSACTION')]
 # trans_df = df[trans_col]
 # print(trans_df)
@@ -50,7 +52,8 @@ with open('data.csv', 'r') as f:
 # print(df.sort_values(by='TRANSACTION_DT')) # zero null
 
 # 12
-# print(len(df[(df['CITY'] == 'BIRMINGHAM') & (df['TRANSACTION_AMT'] > 500)].index))
+print(len(df[(df['CITY'] == 'BIRMINGHAM') &
+             (df['TRANSACTION_AMT'] > 500)].index))
 
 # 13
 # print(df['STATE'].unique())
@@ -71,27 +74,25 @@ with open('data.csv', 'r') as f:
 #
 #
 # print(df['TRANSACTION_DT'].apply(data_split))
-## BETTER
+# BETTER
 # print(df['TRANSACTION_DT'].apply(lambda x: x.split('-')))
-
 
 
 # 18
 # def year_split(x):
 #     return list(map(str, x.split('-')))[0]
 #
+#
 # df['YEAR'] = df['TRANSACTION_DT'].apply(year_split)
-##even better:
-# df['YEAR'] = df['TRANSACTION_DT'].apply(lambda x: x.split('-')[0])
-
-
+# even better:
+df['YEAR'] = df['TRANSACTION_DT'].apply(lambda x: x.split('-')[0])
+print(df.head())
 
 # 19
 # jj = df.groupby('CITY').groups
 # for k, v in jj.items():
 #     print(k + ':\t' + str(len(v)))
-# print(df['CITY'].value_counts(sort=False)) # alternative
-
+# print(df['CITY'].value_counts(sort=False))  # alternative
 
 
 # 20
